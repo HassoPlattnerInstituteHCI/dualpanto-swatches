@@ -60,7 +60,7 @@ public class RoomSpeechOnEntry : MonoBehaviour
     {
         Debug.Log("Trigger entered by: " + other.gameObject.name + "This GO" + gameObject.name);
         if(other.gameObject == null) return;
-        if ((other.gameObject.tag == "Player" && onUpperEnter) || (other.gameObject.tag == "ItHandle" && onLowerEnter))
+        if ((other.gameObject.tag == "MeHandle" && onUpperEnter) || (other.gameObject.tag == "ItHandle" && onLowerEnter))
         {
             if (triggerAfterSpeechEnd)
             {
@@ -76,7 +76,7 @@ public class RoomSpeechOnEntry : MonoBehaviour
     async void OnTriggerExit(Collider other)
     {
         if(other.gameObject == null) return;
-        if ((other.gameObject.tag == "Player" && onUpperEnter) || (other.gameObject.tag == "ItHandle" && onLowerEnter))
+        if ((other.gameObject.tag == "MeHandle" && onUpperEnter) || (other.gameObject.tag == "ItHandle" && onLowerEnter))
         {
             onExit.Invoke();
             speechOut.Stop(false);
