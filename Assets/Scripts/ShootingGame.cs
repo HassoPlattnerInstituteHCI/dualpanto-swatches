@@ -47,6 +47,11 @@ public class ShootingGame : MonoBehaviour
             if (hit.collider.gameObject == gameObject)
             {
                 EndGame();
+                SoundManager.Instance.Play("done");
+            }
+            else
+            {
+                SoundManager.Instance.Play("loose");
             }
         }
 
